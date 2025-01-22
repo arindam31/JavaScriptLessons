@@ -1,0 +1,33 @@
+.mycard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 80%;
+    padding: 1rem;
+    margin: 2rem auto;
+    background-color: rgb(227, 151, 10);
+    display: flex;
+    gap: 1rem;
+}
+
+html {
+    padding: 10rem;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    background-color: black;
+}
+
+button {
+    padding: 5px 10px;
+    /* Optional: Adjust padding */
+}
+
+textarea {
+    resize: none;
+    /* Optional: Prevent resizing */
+}
