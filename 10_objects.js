@@ -12,12 +12,12 @@ course.published = true;
 
 // This is one way. More like a dictionary.
 var course = {
-	title:"Javascript in a day",
-	instructor:"Arindam",
-	level:1,
-	published:true,
-	views:0,
-	updateViews: function(){
+	title: "Javascript in a day",
+	instructor: "Arindam",
+	level: 1,
+	published: true,
+	views: 0,
+	updateViews: function () {
 		return ++course.views;
 	}
 }
@@ -32,13 +32,13 @@ console.log(course.views);
 
 // Class style. Probably the best.
 
-function Course(title, instructor, level, published, views){
+function Course(title, instructor, level, published, views) {
 	this.title = title;
 	this.instructor = instructor;
 	this.level = level;
 	this.published = published;
 	this.views = views;
-	this.updateViews = function(){
+	this.updateViews = function () {
 		return ++this.views;
 	};
 }
@@ -50,3 +50,28 @@ course_Python_PyTest.updateViews(); // This is same as someone viewing the cours
 console.log(course_JS);
 console.log(course_Python_PyTest.views); // This works.
 console.log(course_Python_PyTest['views']); // This works too.
+
+// better way to create a class
+class NewCourse {
+	constructor(title, instructor, level, published, views) {
+		this.title = title;
+		this.instructor = instructor;
+		this.level = level;
+		this.published = published;
+		this.views = views;
+		this.updateViews = function () {
+			return ++this.views;
+		};
+	}
+	toString() {
+		return `Title:${this.title} by ${this.instructor}` // Use backticks else it will not work.
+	}
+}
+
+var courseJSwithClass = new NewCourse('JS in a day', "User1", 1, true, 0); // Create a course.
+var courseReact = new NewCourse('React for beginners', "User2", 1, false, 0);
+courseReact.updateViews(); // This is same as someone viewing the course once.
+
+console.log(`New class for course: ${courseReact}`)
+console.log(courseReact.views); // This works.
+console.log(`Number of views: ${courseReact['views']}`); // This works too.
